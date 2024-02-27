@@ -1,0 +1,68 @@
+/* Destinations SCSS */
+
+@use './partials/global' as *;
+
+/* Destinations section */
+
+#hawaii {
+    @include hawaii-bg;
+    @include destination-bg-sizing;
+}
+
+#iceland {
+    @include iceland-bg;
+    @include destination-bg-sizing;
+}
+
+#greece {
+    @include greece-bg;
+    @include destination-bg-sizing;
+}
+
+.destination {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 4rem;
+
+    &__title {
+        color: $White;
+        font-size: 3.5rem;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        padding: 2rem 0;
+        justify-content: center;
+
+
+        &--card {
+            @extend .card-shape;
+            @include flex-alignment;
+            background-color: $White;
+            flex-direction: column;
+            justify-content: space-evenly;
+            padding: 0 1rem 4rem 1rem;
+            margin: 0 1.5rem;
+        }
+
+        &--card-title {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            border-bottom: 2px solid $Black;
+        }
+
+        &--card-time-slot {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            background-color: $primary-clr;
+            padding: 1.25rem 0;
+
+            p {
+                font-size: 1.325rem;
+            }
+        }
+    }
+}

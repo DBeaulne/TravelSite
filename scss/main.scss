@@ -1,0 +1,100 @@
+/* Main SCSS */
+
+@use './partials/global' as *;
+
+/* Hero Section */
+
+.hero {
+    @include flex-alignment;
+    box-sizing: border-box;
+    justify-content: space-between;
+    background-color: $primary-clr;
+    width: 100%;
+    padding: 4rem;
+
+    &__content {
+        display: flex;
+        width: 45%;
+        flex-direction: column;
+        align-items: flex-start;
+
+
+        h2, p {
+            color: $secondary-clr;
+        }
+
+        &--title{
+
+            h2 {
+                text-transform: capitalize;
+                font-size: 2.5rem;
+            }
+        }
+
+        &--text{
+            padding: 2rem 0;
+        }
+
+        &--button {
+            padding-top: 1rem;
+        }
+    }
+
+    &__img {
+        @include flex-alignment;
+        width: 40%;
+       
+        img {
+            width: 100%;
+            height: 100%;
+
+        }
+    }
+}
+
+/* Recommendation section */
+
+.recommendations {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 6rem;
+
+    &__title {
+        color: $secondary-clr;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        padding: 2rem 0;
+        justify-content: center;
+
+        #hawaii {
+            @include hawaii-bg;
+        }
+
+        #iceland {
+            @include iceland-bg;
+        }
+
+        #greece {
+            @include greece-bg;
+        }
+
+        &--card {
+            @extend .card-shape;
+            @extend .card-shadow;
+            position: relative;
+            background-size: cover;
+            margin: 0 1.5rem;
+
+            h3 {
+                position: absolute;
+                top: 27rem;
+                left: 12rem;
+                font-size: 1.625rem;
+                color: $White;
+            }
+        }
+    }
+}
