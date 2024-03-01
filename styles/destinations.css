@@ -1,5 +1,6 @@
 /* Destinations SCSS */
 /* Global SCSS */
+/* Mixin partial */
 /* Variables */
 /* Colors */
 /* Primary Color
@@ -26,6 +27,7 @@ Use for:
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -41,12 +43,10 @@ a {
 }
 
 #active {
-  border-bottom: 3px solid #DB7A4E;
+  border-bottom: 3px solid #db7a4e;
   padding-bottom: 0.5rem;
 }
 
-/* Keyframes */
-/* Mixins */
 /* Extensions */
 .card-shape, .destination__container--card {
   width: 18rem;
@@ -63,10 +63,12 @@ a {
 .nav-bar {
   display: flex;
   align-items: center;
-  background-color: #FFF;
-  position: sticky;
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
   justify-content: space-between;
   padding: 1rem 2rem;
+  z-index: 1;
 }
 .nav-bar__logo h1 {
   font-size: 1.5rem;
@@ -88,41 +90,65 @@ a {
 /* Button */
 .button {
   position: relative;
-  background-color: #DB7A4E;
+  background-color: #db7a4e;
   padding: 0.75rem 2.5rem;
   border-radius: 2rem;
-  color: #FFF;
+  color: #fff;
 }
 
-/* footer */
 .footer {
   display: flex;
-  align-items: center;
-  background-color: #FEFAF5;
-  justify-content: space-evenly;
-  padding: 3rem 6rem;
+  flex-direction: column;
+  background-color: #fefaf5;
+  padding: 1rem;
+  align-items: flex-start;
+}
+@media screen and (min-width: 1024px) {
+  .footer {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 3rem 6rem;
+  }
 }
 
 .footer-info {
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding: 0.5rem;
+}
+@media screen and (min-width: 1024px) {
+  .footer-info {
+    padding: 0;
+  }
 }
 .footer-info h3 {
   width: 100%;
-  padding-bottom: 2rem;
+  padding: 0.5rem 0;
   color: #335576;
   font-size: 1.75rem;
   text-transform: capitalize;
+}
+@media screen and (min-width: 1024px) {
+  .footer-info h3 {
+    padding-bottom: 2rem;
+  }
 }
 .footer-info a {
   color: #335576;
 }
 .footer-info__email--subtitles {
-  color: #DB7A4E;
+  color: #db7a4e;
   text-transform: uppercase;
   font-size: 0.75rem;
-  padding-bottom: 1rem;
+  padding-bottom: 0.25rem;
+}
+@media screen and (min-width: 1024px) {
+  .footer-info__email--subtitles {
+    padding-bottom: 1rem;
+  }
 }
 .footer-info__email a {
   text-transform: none;
@@ -130,16 +156,31 @@ a {
 .footer-info__sched {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+}
+@media screen and (min-width: 1024px) {
+  .footer-info__sched {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
 }
 .footer-info__sched div {
-  padding-right: 3rem;
+  padding-right: 2rem;
+}
+@media screen and (min-width: 1024px) {
+  .footer-info__sched div {
+    padding-right: 3rem;
+  }
 }
 .footer-info__sched--subtitles {
-  color: #DB7A4E;
+  color: #db7a4e;
   text-transform: uppercase;
   font-size: 0.75rem;
-  padding-bottom: 1rem;
+  padding-bottom: 0.25rem;
+}
+@media screen and (min-width: 1024px) {
+  .footer-info__sched--subtitles {
+    padding-bottom: 1rem;
+  }
 }
 .footer-info__sched--hours {
   color: #335576;
@@ -151,8 +192,12 @@ a {
   justify-content: space-evenly;
 }
 .footer-info__icons a {
-  justify-content: left;
-  padding-right: 3rem;
+  padding-right: 1.5rem;
+}
+@media screen and (min-width: 1024px) {
+  .footer-info__icons a {
+    padding-right: 3rem;
+  }
 }
 .footer-info__icons img {
   width: auto;
@@ -161,21 +206,21 @@ a {
 
 /* Destinations section */
 #hawaii {
-  background-image: url("../assets/Images/hawaii.jpg");
+  background-image: url("../../assets/Images/hawaii.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
 }
 
 #iceland {
-  background-image: url("../assets/Images/iceland.jpg");
+  background-image: url("../../assets/Images/iceland.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
 }
 
 #greece {
-  background-image: url("../assets/Images/greece.jpg");
+  background-image: url("../../assets/Images/greece.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -184,10 +229,10 @@ a {
 .destination {
   display: flex;
   flex-direction: column;
-  padding: 4rem 4rem;
+  padding: 8rem 6rem;
 }
 .destination__title {
-  color: #FFF;
+  color: #fff;
   font-size: 3.5rem;
 }
 .destination__container {
@@ -199,7 +244,7 @@ a {
 .destination__container--card {
   display: flex;
   align-items: center;
-  background-color: #FFF;
+  background-color: #fff;
   flex-direction: column;
   justify-content: space-evenly;
   padding: 0 1rem 4rem 1rem;
@@ -215,7 +260,7 @@ a {
   display: flex;
   justify-content: center;
   width: 100%;
-  background-color: #FEFAF5;
+  background-color: #fefaf5;
   padding: 1.25rem 0;
 }
 .destination__container--card-time-slot p {

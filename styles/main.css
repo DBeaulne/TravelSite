@@ -1,5 +1,6 @@
 /* Main SCSS */
 /* Global SCSS */
+/* Mixin partial */
 /* Variables */
 /* Colors */
 /* Primary Color
@@ -26,6 +27,7 @@ Use for:
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -41,12 +43,16 @@ a {
 }
 
 #active {
-  border-bottom: 3px solid #DB7A4E;
+  border-bottom: 3px solid #db7a4e;
   padding-bottom: 0.5rem;
 }
 
-/* Keyframes */
 /* Mixins */
+/* @mixin flex-alignment {
+  display: flex;
+  align-items: center;
+}
+ */
 /* Extensions */
 .card-shape, .recommendations__container--card {
   width: 18rem;
@@ -63,10 +69,12 @@ a {
 .nav-bar {
   display: flex;
   align-items: center;
-  background-color: #FFF;
-  position: sticky;
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
   justify-content: space-between;
   padding: 1rem 2rem;
+  z-index: 1;
 }
 .nav-bar__logo h1 {
   font-size: 1.5rem;
@@ -88,41 +96,65 @@ a {
 /* Button */
 .button {
   position: relative;
-  background-color: #DB7A4E;
+  background-color: #db7a4e;
   padding: 0.75rem 2.5rem;
   border-radius: 2rem;
-  color: #FFF;
+  color: #fff;
 }
 
-/* footer */
 .footer {
   display: flex;
-  align-items: center;
-  background-color: #FEFAF5;
-  justify-content: space-evenly;
-  padding: 3rem 6rem;
+  flex-direction: column;
+  background-color: #fefaf5;
+  padding: 1rem;
+  align-items: flex-start;
+}
+@media screen and (min-width: 1024px) {
+  .footer {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 3rem 6rem;
+  }
 }
 
 .footer-info {
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding: 0.5rem;
+}
+@media screen and (min-width: 1024px) {
+  .footer-info {
+    padding: 0;
+  }
 }
 .footer-info h3 {
   width: 100%;
-  padding-bottom: 2rem;
+  padding: 0.5rem 0;
   color: #335576;
   font-size: 1.75rem;
   text-transform: capitalize;
+}
+@media screen and (min-width: 1024px) {
+  .footer-info h3 {
+    padding-bottom: 2rem;
+  }
 }
 .footer-info a {
   color: #335576;
 }
 .footer-info__email--subtitles {
-  color: #DB7A4E;
+  color: #db7a4e;
   text-transform: uppercase;
   font-size: 0.75rem;
-  padding-bottom: 1rem;
+  padding-bottom: 0.25rem;
+}
+@media screen and (min-width: 1024px) {
+  .footer-info__email--subtitles {
+    padding-bottom: 1rem;
+  }
 }
 .footer-info__email a {
   text-transform: none;
@@ -130,16 +162,31 @@ a {
 .footer-info__sched {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+}
+@media screen and (min-width: 1024px) {
+  .footer-info__sched {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
 }
 .footer-info__sched div {
-  padding-right: 3rem;
+  padding-right: 2rem;
+}
+@media screen and (min-width: 1024px) {
+  .footer-info__sched div {
+    padding-right: 3rem;
+  }
 }
 .footer-info__sched--subtitles {
-  color: #DB7A4E;
+  color: #db7a4e;
   text-transform: uppercase;
   font-size: 0.75rem;
-  padding-bottom: 1rem;
+  padding-bottom: 0.25rem;
+}
+@media screen and (min-width: 1024px) {
+  .footer-info__sched--subtitles {
+    padding-bottom: 1rem;
+  }
 }
 .footer-info__sched--hours {
   color: #335576;
@@ -151,8 +198,12 @@ a {
   justify-content: space-evenly;
 }
 .footer-info__icons a {
-  justify-content: left;
-  padding-right: 3rem;
+  padding-right: 1.5rem;
+}
+@media screen and (min-width: 1024px) {
+  .footer-info__icons a {
+    padding-right: 3rem;
+  }
 }
 .footer-info__icons img {
   width: auto;
@@ -163,19 +214,29 @@ a {
 .hero {
   display: flex;
   align-items: center;
-  box-sizing: border-box;
   justify-content: space-between;
-  background-color: #FEFAF5;
+  background-color: #fefaf5;
   width: 100%;
-  padding: 4rem;
+  padding: 8rem 6rem;
 }
 .hero__content {
   display: flex;
-  width: 45%;
   flex-direction: column;
+  width: 90%;
   align-items: flex-start;
 }
-.hero__content h2, .hero__content p {
+@media screen and (min-width: 768px) {
+  .hero__content {
+    width: 60%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .hero__content {
+    width: 45%;
+  }
+}
+.hero__content h2,
+.hero__content p {
   color: #335576;
 }
 .hero__content--title h2 {
@@ -195,14 +256,38 @@ a {
 }
 .hero__img img {
   width: 100%;
-  height: 100%;
+}
+@media screen and (max-width: 767px) {
+  .hero__img {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .hero__img {
+    display: none;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .hero__img {
+    display: unset;
+  }
 }
 
 /* Recommendation section */
 .recommendations {
   display: flex;
   flex-direction: column;
-  padding: 4rem 6rem;
+  padding: 4rem 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .recommendations {
+    padding: 4rem 3rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .recommendations {
+    padding: 4rem 6rem;
+  }
 }
 .recommendations__title {
   color: #335576;
@@ -210,27 +295,33 @@ a {
 .recommendations__container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   padding: 2rem 0;
   justify-content: center;
 }
+@media screen and (min-width: 1024px) {
+  .recommendations__container {
+    flex-wrap: nowrap;
+  }
+}
 .recommendations__container #hawaii {
-  background-image: url("../assets/Images/hawaii.jpg");
+  background-image: url("../../assets/Images/hawaii.jpg");
 }
 .recommendations__container #iceland {
-  background-image: url("../assets/Images/iceland.jpg");
+  background-image: url("../../assets/Images/iceland.jpg");
 }
 .recommendations__container #greece {
-  background-image: url("../assets/Images/greece.jpg");
+  background-image: url("../../assets/Images/greece.jpg");
 }
 .recommendations__container--card {
   position: relative;
   background-size: cover;
-  margin: 0 1.5rem;
+  margin: 1rem 1.5rem;
 }
 .recommendations__container--card h3 {
   position: absolute;
-  top: 27rem;
-  left: 12rem;
+  top: 25rem;
+  left: 10rem;
   font-size: 1.625rem;
-  color: #FFF;
+  color: #fff;
 }/*# sourceMappingURL=main.css.map */
