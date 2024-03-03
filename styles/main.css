@@ -46,13 +46,11 @@ a {
   border-bottom: 3px solid #db7a4e;
   padding-bottom: 0.5rem;
 }
-
-/* Mixins */
-/* @mixin flex-alignment {
-  display: flex;
-  align-items: center;
+#active:hover {
+  border-bottom: unset;
+  padding-bottom: 0.7rem;
 }
- */
+
 /* Extensions */
 .card-shape, .recommendations__container--card {
   width: 18rem;
@@ -91,6 +89,16 @@ a {
   list-style: none;
   display: flex;
   padding: 0 1rem;
+}
+.nav-bar__menu li a {
+  background: linear-gradient(to right, #fff, #fff), linear-gradient(to right, #fff, #db7a4e);
+  background-size: 100% 3px, 0 3px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 200ms;
+}
+.nav-bar__menu li a:hover {
+  background-size: 0 3px, 100% 3px;
 }
 
 /* Button */
@@ -317,6 +325,9 @@ a {
   position: relative;
   background-size: cover;
   margin: 1rem 1.5rem;
+}
+.recommendations__container--card:hover {
+  opacity: 0.8;
 }
 .recommendations__container--card h3 {
   position: absolute;
