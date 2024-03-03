@@ -1,0 +1,185 @@
+/* Global SCSS */
+
+@use "mixin";
+@use "variables";
+
+/* Initialization  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    text-transform: capitalize;
+    color: variables.$Black;
+}
+
+#active {
+    border-bottom: 3px solid variables.$highlight-clr;
+    padding-bottom: 0.5rem;
+
+    &:hover {
+        border-bottom: unset;
+        padding-bottom: 0.7rem;
+    }
+}
+
+/* Extensions */
+.card-shape {
+    width: 18rem;
+    height: 28rem;
+    border-radius: 5px;
+}
+
+.card-shadow {
+    box-shadow: 0px 4px 4px rgb(0, 0, 0, 0.2);
+}
+
+/* Global usage */
+/* Nav bar */
+.nav-bar {
+    @include mixin.flex-alignment();
+    background-color: variables.$White;
+    position: fixed;
+    width: 100%;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    z-index: 1;
+
+    &__logo {
+        h1 {
+            font-size: 1.5rem;
+            color: variables.$secondary-clr;
+        }
+    }
+
+    &__menu {
+        @include mixin.flex-alignment();
+
+        ul {
+            display: flex;
+        }
+
+        li {
+            list-style: none;
+            display: flex;
+            padding: 0 1rem;
+
+            a {
+                @include mixin.link-animation;
+            }
+        }
+    }
+}
+
+/* Button */
+.button {
+    position: relative;
+    background-color: variables.$highlight-clr;
+    padding: 0.75rem 2.5rem;
+    border-radius: 2rem;
+    color: variables.$White;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    background-color: variables.$primary-clr;
+    padding: 1rem;
+    align-items: flex-start;
+
+    @include mixin.desktop {
+        @include mixin.flex-alignment();
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 3rem 6rem;
+    }
+}
+
+.footer-info {
+    @include mixin.flex-alignment();
+    flex-direction: column;
+    padding: 0.5rem;
+
+    @include mixin.desktop {
+        padding: 0;
+    }
+
+    h3 {
+        width: 100%;
+        padding: 0.5rem 0;
+        color: variables.$secondary-clr;
+        font-size: 1.75rem;
+        text-transform: capitalize;
+
+        @include mixin.desktop {
+            padding-bottom: 2rem;
+        }
+    }
+
+    a {
+        color: variables.$secondary-clr;
+    }
+
+    &__email {
+        &--subtitles {
+            @include mixin.subtitles();
+        }
+
+        a {
+            text-transform: none;
+        }
+    }
+
+    &__sched {
+        @include mixin.flex-alignment();
+
+        @include mixin.desktop {
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        div {
+            padding-right: 2rem;
+
+            @include mixin.desktop {
+                padding-right: 3rem;
+            }
+        }
+
+        &--subtitles {
+            @include mixin.subtitles();
+        }
+
+        &--hours {
+            color: variables.$secondary-clr;
+            text-transform: capitalize;
+        }
+    }
+
+    &__icons {
+        @include mixin.flex-alignment();
+        justify-content: space-evenly;
+
+        a {
+            padding-right: 1.5rem;
+
+            @include mixin.desktop {
+                padding-right: 3rem;
+            }
+        }
+
+        img {
+            width: auto;
+            height: 1.75rem;
+        }
+    }
+}

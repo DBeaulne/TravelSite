@@ -1,0 +1,72 @@
+/* Mixin partial */
+@use "variables";
+
+@mixin flex-alignment {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin subtitles {
+    color: variables.$highlight-clr;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    padding-bottom: 0.25rem;
+
+    @include desktop {
+        padding-bottom: 1rem;
+    }
+}
+
+@mixin link-animation {
+    background: linear-gradient(to right, variables.$White, variables.$White),
+        linear-gradient(to right, variables.$White, variables.$highlight-clr);
+    background-size: 100% 3px, 0 3px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 200ms;
+
+    &:hover {
+        background-size: 0 3px, 100% 3px;
+    }
+}
+
+@mixin hawaii-bg {
+    background-image: url("../../assets/Images/hawaii.jpg");
+}
+
+@mixin iceland-bg {
+    background-image: url("../../assets/Images/iceland.jpg");
+}
+
+@mixin greece-bg {
+    background-image: url("../../assets/Images/greece.jpg");
+}
+
+@mixin destination-bg-sizing {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+@mixin smaller {
+    @media screen and (max-width: variables.$smaller-breakpoint) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: variables.$tablet-breakpoint) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: variables.$desktop-breakpoint) {
+        @content;
+    }
+}

@@ -1,0 +1,117 @@
+/* Destinations SCSS */
+
+@use "./partials/global";
+@use "./partials/mixin";
+@use "./partials/variables";
+
+/* Destinations section */
+
+#hawaii {
+  @include mixin.hawaii-bg;
+  @include mixin.destination-bg-sizing;
+}
+
+#iceland {
+  @include mixin.iceland-bg;
+  @include mixin.destination-bg-sizing;
+}
+
+#greece {
+  @include mixin.greece-bg;
+  @include mixin.destination-bg-sizing;
+}
+
+.destination {
+  @include mixin.flex-column;
+  padding: 6rem 2rem;
+
+  @include mixin.desktop {
+    padding: 8rem 6rem;
+  }
+
+  &__title {
+    color: variables.$White;
+    font-size: 2rem;
+
+    @include mixin.tablet {
+      font-size: 2.75rem;
+    }
+
+    @include mixin.desktop {
+      font-size: 3.5rem;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem 0;
+    justify-content: center;
+
+    &--card {
+      @extend .card-shape;
+      @include mixin.flex-alignment;
+      background-color: variables.$White;
+      flex-direction: column;
+      justify-content: space-around;
+      flex-grow: 1;
+      min-width: 10rem;
+      max-width: 12rem;
+      padding: 0 0.5rem 4rem 0.5rem;
+      margin: 0 0.8rem;
+
+      @include mixin.tablet {
+        flex-grow: 1;
+        min-width: 12rem;
+        max-width: 14rem;
+        padding: 0 1rem 4rem 1rem;
+        margin: 0 1.5rem;
+      }
+
+      @include mixin.desktop {
+        max-width: 18rem;
+        padding: 0 1.25rem 4rem 1.25rem;
+        margin: 0 1.5rem;
+      }
+    }
+
+    &--card-title {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      border-bottom: 2px solid variables.$Black;
+
+      h2 {
+        font-size: 1.25em;
+
+        @include mixin.desktop {
+          font-size: 1.5em;
+        }
+      }
+    }
+
+    &--card-time-slot {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      background-color: variables.$primary-clr;
+      padding: 0.75rem 0;
+
+      @include mixin.desktop {
+        padding: 1.25rem 0;
+      }
+
+      p {
+        font-size: 1.1rem;
+
+        @include mixin.tablet {
+          font-size: 1.25rem;
+        }
+
+        @include mixin.desktop {
+          font-size: 1.325rem;
+        }
+      }
+    }
+  }
+}

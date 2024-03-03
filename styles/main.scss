@@ -1,0 +1,133 @@
+/* Main SCSS */
+
+@use "./partials/global";
+@use "./partials/mixin";
+@use "./partials/variables";
+
+/* Hero Section */
+
+.hero {
+    @include mixin.flex-alignment;
+    justify-content: space-between;
+    background-color: variables.$primary-clr;
+    width: 100%;
+    padding: 8rem 6rem;
+
+    &__content {
+        @include mixin.flex-column;
+        width: 90%;
+        align-items: flex-start;
+
+        @include mixin.tablet {
+            width: 60%;
+        }
+
+        @include mixin.desktop {
+            width: 45%;
+        }
+
+        h2,
+        p {
+            color: variables.$secondary-clr;
+        }
+
+        &--title {
+            h2 {
+                text-transform: capitalize;
+                font-size: 2.5rem;
+            }
+        }
+
+        &--text {
+            padding: 2rem 0;
+        }
+
+        &--button {
+            padding-top: 1rem;
+        }
+    }
+
+    &__img {
+        @include mixin.flex-alignment;
+        width: 40%;
+
+        img {
+            width: 100%;
+        }
+
+        @include mixin.smaller {
+            display: none;
+        }
+
+        @include mixin.tablet {
+            display: none;
+        }
+
+        @include mixin.desktop {
+            display: unset;
+        }
+    }
+}
+
+/* Recommendation section */
+
+.recommendations {
+    @include mixin.flex-column;
+    padding: 4rem 1.5rem;
+
+    @include mixin.tablet {
+        padding: 4rem 3rem;
+    }
+
+    @include mixin.desktop {
+        padding: 4rem 6rem;
+    }
+
+    &__title {
+        color: variables.$secondary-clr;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 2rem 0;
+        justify-content: center;
+
+        @include mixin.desktop {
+            flex-wrap: nowrap;
+        }
+
+        #hawaii {
+            @include mixin.hawaii-bg;
+        }
+
+        #iceland {
+            @include mixin.iceland-bg;
+        }
+
+        #greece {
+            @include mixin.greece-bg;
+        }
+
+        &--card {
+            @extend .card-shape;
+            @extend .card-shadow;
+            position: relative;
+            background-size: cover;
+            margin: 1rem 1.5rem;
+
+            &:hover {
+                opacity: 0.8;
+            }
+
+            h3 {
+                position: absolute;
+                top: 25rem;
+                left: 10rem;
+                font-size: 1.625rem;
+                color: variables.$White;
+            }
+        }
+    }
+}
