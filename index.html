@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/main.css" />
-    <title>Daniel-Beaulne-travelsite</title>
-  </head>
-  <body>
-    <header>
-      <!-- Each page must have an identical Nav Bar 
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./styles/main.css">
+        <title>Daniel-Beaulne-travelsite</title>
+    </head>
+
+    <body>
+        <header>
+            <!-- Each page must have an identical Nav Bar 
         * Will contain working links for each page
         * logo: should like to the home page
         * Links for Home / Iceland / Greece / Hawaii
@@ -17,56 +19,53 @@
         * site logo/wordmark color must be #335576
         * The currently active page must be underlined using the color #DB7A4E
         -->
-      <div class="nav-bar">
-        <div class="nav-bar__logo">
-          <a href="#">
-            <h1>travel site</h1>
-          </a>
-        </div>
-        <div class="nav-bar__menu">
-          <ul>
-            <li><a id="active" href="#">home</a></li>
-            <li><a href="./pages/hawaii.html">hawaii</a></li>
-            <li><a href="./pages/iceland.html">iceland</a></li>
-            <li><a href="./pages/greece.html">greece</a></li>
-          </ul>
-        </div>
-      </div>
-    </header>
+            <div class="nav-bar">
+                <div class="nav-bar__logo">
+                    <a href="#">
+                        <h1>travel site</h1>
+                    </a>
+                </div>
+                <div class="nav-bar__menu">
+                    <ul>
+                        <li><a id="active" href="#">home</a></li>
+                        <li><a href="./pages/hawaii.html">hawaii</a></li>
+                        <li><a href="./pages/iceland.html">iceland</a></li>
+                        <li><a href="./pages/greece.html">greece</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
 
-    <section class="hero">
-      <!-- 
+        <section class="hero">
+            <!-- 
         * The hero background color must be #FEFAF5
         * The text content must be left aligned
         * The slogan color must be #335576
         * The ‘Get Started’ button background color must be #DB7A4E
         -->
-      <div class="hero__content">
-        <div class="hero__content--title">
-          <h2>travelling comes with endless discoveries</h2>
-        </div>
-        <div class="hero__content--text">
-          <p>
-            Don't let your dreams be just dreams. Experience the world by
-            booking a vacation with us now.
-          </p>
-        </div>
-        <div class="hero__content--button">
-          <a href="#" class="button" type="button">Get Started</a>
-          <div class="button-bg"></div>
-        </div>
-      </div>
+            <div class="hero__content">
+                <div class="hero__content--title">
+                    <h2>travelling comes with endless discoveries</h2>
+                </div>
+                <div class="hero__content--text">
+                    <p>
+                        Don't let your dreams be just dreams. Experience the
+                        world by booking a vacation with us now.
+                    </p>
+                </div>
+                <div class="hero__content--button">
+                    <a href="#" class="button">Get Started</a>
+                    <div class="button-bg"></div>
+                </div>
+            </div>
 
-      <div class="hero__img">
-        <img
-          src="./assets/Images/hero.png"
-          alt="cartoon image of the earth with an airplane circling"
-        />
-      </div>
-    </section>
+            <div class="hero__img">
+                <img src="./assets/Images/hero.png" alt="cartoon image of the earth with an airplane circling">
+            </div>
+        </section>
 
-    <section class="recommendations">
-      <!-- 
+        <section class="recommendations">
+            <!-- 
         * The recommendations title must have the color of #335576
         * There will be 3 Cards, one for each destination (Iceland, Greece, Hawaii)
         * The destination name must be in the bottom right corner of the card
@@ -78,83 +77,83 @@
             - Blur: 4px
             - Color: Black, with an opacity of 20%
          -->
-      <div class="recommendations__title">
-        <h2>Recommendations</h2>
-      </div>
-      <div class="recommendations__container">
-        <a href="./pages/hawaii.html">
-          <div class="recommendations__container--card" id="hawaii">
-            <h3>hawaii</h3>
-          </div>
-        </a>
-        <a href="./pages/iceland.html">
-          <div class="recommendations__container--card" id="iceland">
-            <h3>iceland</h3>
-          </div>
-        </a>
-        <a href="./pages/greece.html">
-          <div class="recommendations__container--card" id="greece">
-            <h3>greece</h3>
-          </div>
-        </a>
-      </div>
-    </section>
+            <div class="recommendations__title">
+                <h2>Recommendations</h2>
+            </div>
+            <div class="recommendations__container">
+                <a href="./pages/hawaii.html">
+                    <div class="recommendations__container--card" id="hawaii">
+                        <h3>hawaii</h3>
+                    </div>
+                </a>
+                <a href="./pages/iceland.html">
+                    <div class="recommendations__container--card" id="iceland">
+                        <h3>iceland</h3>
+                    </div>
+                </a>
+                <a href="./pages/greece.html">
+                    <div class="recommendations__container--card" id="greece">
+                        <h3>greece</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
 
-    <footer>
-      <!-- Each page must have an identical footer
+        <footer>
+            <!-- Each page must have an identical footer
         * background color must be #FEFAF5
         * The footer titles and text must be the color #335576
         * The footer subtitles must be the color #DB7A4E
         -->
-      <div class="footer">
-        <div class="footer-info">
-          <h3>contact</h3>
-          <div class="footer-info__email">
-            <p class="footer-info__email--subtitles">email</p>
-            <a href="mailto:info@travelsite.com">info@travelsite.com</a>
-          </div>
-        </div>
-        <div class="footer-info">
-          <h3>hours</h3>
-          <div class="footer-info__sched">
-            <div>
-              <p class="footer-info__sched--subtitles">monday - friday</p>
-              <p class="footer-info__sched--hours">9:00 AM - 5:00 PM</p>
+            <div class="footer">
+                <div class="footer-info">
+                    <h3>contact</h3>
+                    <div class="footer-info__email">
+                        <p class="footer-info__email--subtitles">email</p>
+                        <a href="mailto:info@travelsite.com">info@travelsite.com</a>
+                    </div>
+                </div>
+                <div class="footer-info">
+                    <h3>hours</h3>
+                    <div class="footer-info__sched">
+                        <div>
+                            <p class="footer-info__sched--subtitles">
+                                monday - friday
+                            </p>
+                            <p class="footer-info__sched--hours">
+                                9:00 AM - 5:00 PM
+                            </p>
+                        </div>
+                        <div>
+                            <p class="footer-info__sched--subtitles">
+                                saturday
+                            </p>
+                            <p class="footer-info__sched--hours">
+                                10:00 AM - 4:00 PM
+                            </p>
+                        </div>
+                        <div>
+                            <p class="footer-info__sched--subtitles">sunday</p>
+                            <p class="footer-info__sched--hours">closed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-info">
+                    <h3>social</h3>
+                    <div class="footer-info__icons">
+                        <a href="https://intsagram.com">
+                            <img src="./assets/Images/Icons/icon-instagram.png" alt="instagram icon">
+                        </a>
+                        <a href="https://facebook.com">
+                            <img src="./assets/Images/Icons/icon-facebook.png" alt="facebook icon">
+                        </a>
+                        <a href="https://twitter.com">
+                            <img src="./assets/Images/Icons/icon-twitter.png" alt="twitter icon">
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div>
-              <p class="footer-info__sched--subtitles">saturday</p>
-              <p class="footer-info__sched--hours">10:00 AM - 4:00 PM</p>
-            </div>
-            <div>
-              <p class="footer-info__sched--subtitles">sunday</p>
-              <p class="footer-info__sched--hours">closed</p>
-            </div>
-          </div>
-        </div>
-        <div class="footer-info">
-          <h3>social</h3>
-          <div class="footer-info__icons">
-            <a href="https://intsagram.com">
-              <img
-                src="./assets/Images/Icons/icon-instagram.png"
-                alt="instagram icon"
-              />
-            </a>
-            <a href="https://facebook.com">
-              <img
-                src="./assets/Images/Icons/icon-facebook.png"
-                alt="facebook icon"
-              />
-            </a>
-            <a href="https://twitter.com">
-              <img
-                src="./assets/Images/Icons/icon-twitter.png"
-                alt="twitter icon"
-              />
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </body>
+        </footer>
+    </body>
+
 </html>
